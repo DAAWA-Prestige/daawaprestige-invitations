@@ -147,7 +147,7 @@ color:#f8ead2;
 }
 
 .hero{
-height:55vh;
+height:100vh;
 
 background-image:url("fond.jpg");
 background-size:cover;
@@ -156,7 +156,9 @@ background-repeat:no-repeat;
 
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:flex-end;
+
+padding-bottom:120px;
 
 text-align:center;
 position:relative;
@@ -165,26 +167,30 @@ position:relative;
 .hero::before{
 content:"";
 position:absolute;
-inset:0;
-background:rgba(0,0,0,0.25);
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.15);
 }
 
 .hero-content{
 position:relative;
 z-index:2;
+width:100%;
 }
 
 .hero h1{
 font-family:"Cormorant Garamond", serif;
-font-size:72px;
+font-size:64px;
 font-weight:600;
-margin-bottom:10px;
+margin-bottom:20px;
 color:#f8ead2;
 }
 
 .date{
-font-size:22px;
-letter-spacing:2px;
+font-size:24px;
+letter-spacing:3px;
 color:#f8ead2;
 }
 
@@ -435,3 +441,19 @@ music.play();
 
 </body>
 </html>
+
+@media (max-width:600px){
+
+.hero{
+padding-bottom:90px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.date{
+font-size:18px;
+}
+
+}
