@@ -287,6 +287,16 @@ color:#f8ead2;
   .section p{
     font-size:16px;
   }
+
+  .fade-in{
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s ease;
+}
+
+.fade-in.visible{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
@@ -327,7 +337,7 @@ Cliquez pour ouvrir
 
 </section>
 
-<section class="invitation-text">
+<section class="invitation-text fade-in">
 
 <div class="ornament">✦</div>
 
@@ -347,11 +357,11 @@ placé sous le signe de l’amour, de la joie et de la convivialité.
 ✦ ✦ ✦
 </div>
   
-<section class="countdown">
+<section class="countdown fade-in">
 <div id="countdown"></div>
 </section>
 
-<section class="section">
+<section class="section fade-in">
 <h2>Détails de la journée</h2>
 
 <p>
@@ -431,6 +441,20 @@ music.pause();
 }else{
 music.play();
 }
+});
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+},{
+threshold:0.2
+});
+
+document.querySelectorAll(".fade-in").forEach(el => {
+observer.observe(el);
 });
 </script>
 
