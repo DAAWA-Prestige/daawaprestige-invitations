@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
+<style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,15 +66,29 @@ display:block;
 
 .message{
 position:absolute;
-bottom:60px;
+bottom:80px;
 left:50%;
 transform:translateX(-50%);
-background:rgba(255,255,255,0.85);
-padding:14px 24px;
-border-radius:30px;
-font-size:18px;
-font-weight:bold;
-color:#2c2c2c;
+
+padding:14px 28px;
+
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,0.35);
+
+border-radius:999px;
+
+color:white;
+
+font-family:"Cormorant Garamond", serif;
+font-size:22px;
+font-weight:600;
+letter-spacing:1px;
+
+box-shadow:0 8px 30px rgba(0,0,0,0.15);
+
 animation:pulse 2s infinite;
 }
 
