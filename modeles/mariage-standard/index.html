@@ -108,6 +108,24 @@ transform:translateX(-50%) scale(1);
 }
 
 }
+
+#videoScreen{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+z-index:9999;
+}
+
+#openingVideo{
+width:100%;
+height:100%;
+object-fit:cover;
+}  
+  
 </style>
 </head>
 
@@ -126,6 +144,16 @@ Cliquez pour ouvrir
 </div>
 </div>
 
+  <div id="videoScreen" style="display:none;">
+  <video
+    id="openingVideo"
+    width="100%"
+    height="100%"
+    playsinline>
+    <source src="ouverture.mp4" type="video/mp4">
+  </video>
+</div>
+  
 </div>
 
 <div class="invitation" id="invitation">
@@ -172,8 +200,23 @@ Daawa Prestige
 
 function openInvitation(){
 
+function openInvitation(){
+
 document.querySelector(".envelope-screen").style.display="none";
+
+document.getElementById("videoScreen").style.display="block";
+
+const video=document.getElementById("openingVideo");
+
+video.play();
+
+video.onended=function(){
+
+document.getElementById("videoScreen").style.display="none";
+
 document.getElementById("invitation").style.display="block";
+
+};
 
 }
 
