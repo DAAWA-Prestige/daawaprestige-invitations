@@ -15,7 +15,6 @@ right:20px;
 width:35px;
 height:35px;
 
-display:flex;
 align-items:center;
 justify-content:center;
 
@@ -201,6 +200,12 @@ Daawa Prestige
 
 <script>
 function openInvitation(){
+  
+const music=document.getElementById("bgMusic");
+music.volume=0.25;
+music.play();
+
+document.getElementById("musicBtn").style.display="flex";
 document.querySelector(".envelope-screen").style.display="none";
 document.getElementById("videoScreen").style.display="block";
 
