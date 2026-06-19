@@ -10,16 +10,18 @@
 #musicBtn{
 display:none;
 position:fixed;
-top:20px;
+bottom:20px;
 right:20px;
-background:#b28b67;
-color:white;
+width:55px;
+height:55px;
 border:none;
-padding:12px 18px;
-border-radius:30px;
+border-radius:50%;
+background:rgba(178,139,103,0.9);
+color:white;
+font-size:24px;
 cursor:pointer;
-font-size:16px;
-z-index:999;
+z-index:9999;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 body{
 margin:0;
@@ -148,7 +150,7 @@ Cliquez pour ouvrir
 </div>
 
 <button id="musicBtn" onclick="toggleMusic()">
-🎵 Musique ON
+🎵 
 </button>
 <div class="invitation" id="invitation">
 
@@ -207,22 +209,20 @@ document.getElementById("bgMusic").play();
 function toggleMusic(){
 
 const music=document.getElementById("bgMusic");
-
 const btn=document.getElementById("musicBtn");
 
 if(music.paused){
 
 music.play();
-
-btn.innerHTML="🎵 Musique ON";
+btn.innerHTML="🎵";
 
 }else{
 
 music.pause();
-
-btn.innerHTML="🔇 Musique OFF";
+btn.innerHTML="🔇";
 
 }
+
 
 }
 const targetDate=new Date("September 17, 2026 17:00:00").getTime();
