@@ -33,9 +33,17 @@ cursor:pointer;
 
 
 .message{
-margin-top:25px;
-font-size:22px;
+position:absolute;
+bottom:60px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(255,255,255,0.85);
+padding:14px 24px;
+border-radius:30px;
+font-size:18px;
 font-weight:bold;
+color:#2c2c2c;
+animation:pulse 2s infinite;
 }
 
 .invitation{
@@ -85,6 +93,21 @@ background:white;
 margin-top:40px;
 }
 
+  @keyframes pulse{
+
+0%{
+transform:translateX(-50%) scale(1);
+}
+
+50%{
+transform:translateX(-50%) scale(1.05);
+}
+
+100%{
+transform:translateX(-50%) scale(1);
+}
+
+}
 </style>
 </head>
 
@@ -99,7 +122,7 @@ src="enveloppe.png"
 alt="Enveloppe invitation">
 
 <div class="message">
-Cliquez pour ouvrir l'invitation
+✨ Cliquez pour ouvrir votre invitation ✨
 </div>
 </div>
 
