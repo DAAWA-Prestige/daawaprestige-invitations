@@ -9,6 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
+html, body{
+margin:0;
+padding:0;
+width:100%;
+min-height:100%;
+overflow-x:hidden;
+}
+
+body{
+font-family:Georgia,serif;
+background:#1f2b23;
+color:#f8ead2;
+text-align:center;
+}
+
 #musicBtn{
 display:none;
 position:fixed;
@@ -29,14 +44,6 @@ z-index:9999;
 box-shadow:0 4px 15px rgba(0,0,0,0.2);
 padding:0;
 }
-}
-body{
-margin:0;
-font-family:Georgia,serif;
-background:#f8f4ef;
-color:#2c2c2c;
-text-align:center;
-}
 
 .envelope-screen{
 height:100vh;
@@ -50,10 +57,8 @@ position:relative;
 position:fixed;
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 object-fit:cover;
 display:block;
 }
@@ -63,29 +68,22 @@ position:absolute;
 bottom:250px;
 left:50%;
 transform:translateX(-50%);
-
 padding:12px 28px;
-
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(12px);
 -webkit-backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,0.30);
 border-radius:999px;
-
 color:white;
-
 font-family:"Cormorant Garamond", serif;
 font-size:18px;
 font-weight:600;
-
 letter-spacing:1px;
 white-space:nowrap;
-
 box-shadow:0 8px 30px rgba(0,0,0,0.15);
-
 animation:pulse 2s infinite;
 }
+
 @keyframes pulse{
 0%{transform:translateX(-50%) scale(1);}
 50%{transform:translateX(-50%) scale(1.05);}
@@ -113,45 +111,62 @@ object-fit:cover;
 display:none;
 min-height:100vh;
 padding:0;
-background-image:url("fond.jpg");
+margin:0;
+background-image:url("Fond.jpg");
 background-size:cover;
-background-position:center;
+background-position:center top;
+background-repeat:no-repeat;
 background-attachment:fixed;
 color:#f8ead2;
 }
 
-.hero{
-padding:90px 20px 50px;
+.hero,
+.countdown,
+.section,
+footer{
 background:transparent;
+color:#f8ead2;
+}
+
+.hero{
+padding:90px 20px 40px;
 }
 
 .hero h1{
+font-family:"Cormorant Garamond", serif;
 font-size:52px;
 margin-bottom:10px;
+color:#f8ead2;
 }
 
 .hero p{
 font-size:20px;
-}
-
-  .hero h1,
-.hero p,
-.countdown,
-.section,
-footer{
 color:#f8ead2;
 }
-  
+
 .countdown{
-padding:50px 20px;
+padding:45px 20px;
 font-size:32px;
 font-weight:bold;
+color:#f8ead2;
 }
 
 .section{
-max-width:900px;
-margin:auto;
+max-width:760px;
+margin:40px auto;
 padding:60px 20px;
+color:#f8ead2;
+}
+
+.section h2{
+font-family:"Cormorant Garamond", serif;
+font-size:36px;
+margin-bottom:25px;
+}
+
+.section p{
+font-size:18px;
+line-height:1.8;
 }
 
 .map-btn{
@@ -165,24 +180,50 @@ margin-top:20px;
 }
 
 footer{
-padding:40px;
-background:white;
-margin-top:40px;
+padding:30px;
+margin:0;
+font-size:16px;
+color:#f8ead2;
 }
 
-@media (min-width: 768px){
+@media (min-width: 900px){
+  .invitation{
+    max-width:430px;
+    margin:0 auto;
+    background-size:cover;
+    box-shadow:0 0 40px rgba(0,0,0,0.25);
+  }
+
   .message{
-    font-size:45px;
+    font-size:28px;
     padding:16px 42px;
     bottom:180px;
   }
 
   #musicBtn{
-    width:105px;
-    height:105px;
-    font-size:38px;
-    bottom:150px;
+    width:48px;
+    height:48px;
+    font-size:22px;
+    bottom:60px;
     right:40px;
+  }
+}
+
+@media (max-width: 600px){
+  .hero h1{
+    font-size:42px;
+  }
+
+  .countdown{
+    font-size:26px;
+  }
+
+  .section h2{
+    font-size:30px;
+  }
+
+  .section p{
+    font-size:16px;
   }
 }
 </style>
@@ -207,6 +248,7 @@ Cliquez pour ouvrir
 <button id="musicBtn" onclick="toggleMusic()">
 🎵
 </button>
+
 <div class="invitation" id="invitation">
 
 <section class="hero">
@@ -244,7 +286,6 @@ Daawa Prestige
 
 <script>
 function openInvitation(){
-  
 const music=document.getElementById("bgMusic");
 music.volume=0.25;
 music.play();
@@ -257,36 +298,25 @@ const video=document.getElementById("openingVideo");
 video.play();
 
 video.onended=function(){
-
 document.getElementById("videoScreen").style.display="none";
-
 document.getElementById("invitation").style.display="block";
-document.getElementById("musicBtn").style.display="block";
-
-const music=document.getElementById("bgMusic");
-music.volume=0.25;
-music.play();
+document.getElementById("musicBtn").style.display="flex";
 };
 }
-function toggleMusic(){
 
+function toggleMusic(){
 const music=document.getElementById("bgMusic");
 const btn=document.getElementById("musicBtn");
 
 if(music.paused){
-
 music.play();
 btn.innerHTML="🎵";
-
 }else{
-
 music.pause();
 btn.innerHTML="🔇";
-
+}
 }
 
-
-}
 const targetDate=new Date("September 17, 2026 17:00:00").getTime();
 
 setInterval(function(){
@@ -302,26 +332,20 @@ document.getElementById("countdown").innerHTML=
 days+"j "+hours+"h "+minutes+"m "+seconds+"s";
 },1000);
 
-  document.addEventListener("visibilitychange", function(){
-
-const music = document.getElementById("bgMusic");
+document.addEventListener("visibilitychange", function(){
+const music=document.getElementById("bgMusic");
 
 if(document.hidden){
-
 music.pause();
-
 }else{
-
 music.play();
-
 }
-
 });
 </script>
 
-  <audio id="bgMusic" loop>
-  <source src="musique.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop>
+<source src="musique.mp3" type="audio/mpeg">
 </audio>
-  
+
 </body>
 </html>
