@@ -111,12 +111,18 @@ object-fit:cover;
 
 .invitation{
 display:none;
-padding:40px 20px;
+min-height:100vh;
+padding:0;
+background-image:url("fond.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:#f8ead2;
 }
 
 .hero{
-padding:80px 20px;
-background:#e7ddd1;
+padding:90px 20px 50px;
+background:transparent;
 }
 
 .hero h1{
@@ -128,6 +134,14 @@ margin-bottom:10px;
 font-size:20px;
 }
 
+  .hero h1,
+.hero p,
+.countdown,
+.section,
+footer{
+color:#f8ead2;
+}
+  
 .countdown{
 padding:50px 20px;
 font-size:32px;
