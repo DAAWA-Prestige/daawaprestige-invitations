@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mariage Standard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia,serif;
+background:#f8f4ef;
+color:#2c2c2c;
+text-align:center;
+}
+
+.envelope-screen{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#efe5da;
+cursor:pointer;
+}
+
+.envelope{
+width:320px;
+height:220px;
+background:#f5ede2;
+position:relative;
+border-radius:8px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(135deg, transparent 50%, #e4d7c8 50%);
+clip-path:polygon(0 0,100% 0,50% 60%);
+}
+
+.message{
+margin-top:260px;
+font-size:22px;
+font-weight:bold;
+}
+
+.invitation{
+display:none;
+padding:40px 20px;
+}
+
+.hero{
+padding:80px 20px;
+background:#e7ddd1;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.countdown{
+padding:50px 20px;
+font-size:32px;
+font-weight:bold;
+}
+
+.section{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+}
+
+.map-btn{
+display:inline-block;
+padding:15px 25px;
+background:#b28b67;
+color:white;
+text-decoration:none;
+border-radius:30px;
+margin-top:20px;
+}
+
+footer{
+padding:40px;
+background:white;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="envelope-screen" onclick="openInvitation()">
+
+<div>
+<div class="envelope"></div>
+
+<div class="message">
+Cliquez pour ouvrir l'invitation
+</div>
+</div>
+
+</div>
+
+<div class="invitation" id="invitation">
+
+<section class="hero">
+<h1>Anis & Maram</h1>
+<p>17 Septembre 2026</p>
+</section>
+
+<section class="countdown">
+<div id="countdown"></div>
+</section>
+
+<section class="section">
+
+<h2>Détails de la journée</h2>
+
+<p>
+Salle des fêtes Hôtel El Aurassi
+<br><br>
+Alger Centre
+<br><br>
+17 Septembre 2026
+<br><br>
+À partir de 17h
+</p>
+
+<a
+class="map-btn"
+href="https://maps.google.com"
+target="_blank">
+Ouvrir Google Maps
+</a>
+
+</section>
+
+<footer>
+Daawa Prestige
+</footer>
+
+</div>
+
+<script>
+
+function openInvitation(){
+
+document.querySelector(".envelope-screen").style.display="none";
+document.getElementById("invitation").style.display="block";
+
+}
+
+const targetDate=new Date("September 17, 2026 17:00:00").getTime();
+
+setInterval(function(){
+
+const now=new Date().getTime();
+
+const distance=targetDate-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML=
+days+"j "
++hours+"h "
++minutes+"m "
++seconds+"s";
+
+},1000);
+
+</script>
+
+</body>
+</html>
