@@ -32,50 +32,50 @@ text-align:center;
 font-family:"Charm", serif;
 }
 
-  .invitation-frame{
-
-max-width:340px;
-
-margin:0 auto;
-
-padding:45px 30px;
-
-border:1.5px solid rgba(248,234,210,0.35);
-
-border-radius:18px;
+.frame-container{
 
 position:relative;
 
+max-width:380px;
+
+margin:0 auto;
+
 }
 
-.invitation-frame::before{
+.frame-image{
 
-content:"";
+width:100%;
+
+display:block;
+
+}
+
+.frame-text{
 
 position:absolute;
 
-top:12px;
-left:12px;
-right:12px;
-bottom:12px;
+top:50%;
+left:50%;
 
-border:1px solid rgba(248,234,210,0.15);
+transform:translate(-50%,-50%);
 
-border-radius:12px;
+width:72%;
 
-pointer-events:none;
+text-align:center;
 
-}
+color:#f8ead2;
 
-.invitation-frame{
-
-transition:all .5s ease;
+font-family:"Charm", cursive;
 
 }
 
-.invitation-frame:hover{
+.frame-text p{
 
-transform:translateY(-3px);
+font-size:24px;
+
+line-height:1.6;
+
+margin:20px 0;
 
 }
 .invitation-text p{
@@ -476,7 +476,14 @@ Cliquez pour ouvrir
 
 <section class="invitation-text fade-in">
 
-<div class="invitation-frame">
+<div class="frame-container">
+
+<img
+src="cadre.png"
+class="frame-image"
+alt="Cadre décoratif">
+
+<div class="frame-text">
 
 <div class="ornament">✦</div>
 
@@ -491,6 +498,8 @@ placé sous le signe de l’amour, de la joie et de la convivialité.
 </p>
 
 <div class="ornament">✦</div>
+
+</div>
 
 </div>
 
