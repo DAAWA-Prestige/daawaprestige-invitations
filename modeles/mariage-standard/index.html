@@ -32,38 +32,6 @@ text-align:center;
 font-family:"Charm", serif;
 }
 
-.frame-container{
-position:relative;
-max-width:480px;
-width:90%;
-margin:40px auto;
-}
-
-.frame-image{
-
-width:100%;
-
-display:block;
-
-}
-
-.frame-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:58%;
-text-align:center;
-color:#f8ead2;
-font-family:"Charm", cursive;
-}
-
-.frame-text p{
-font-size:14px;
-line-height:1.2;
-margin:18px 0;
-}
-  
 .invitation-text p{
 max-width:620px;
 margin:0 auto;
@@ -71,17 +39,57 @@ font-size:26px;
 line-height:1.5;
 font-weight:600;
 }
+  
+.frame-container{
+position:relative;
+width:92%;
+max-width:540px;
+margin:70px auto;
+animation:fadeFrame 1.5s ease;
+}
+
+.frame-image{
+display:block;
+width:100%;
+height:auto;
+}
+
+.frame-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:56%;
+text-align:center;
+font-family:"Charm",cursive;
+color:#f8ead2;
+}
+
+.frame-text p{
+font-size:20px;
+line-height:1.8;
+font-weight:600;
+margin:14px 0;
+text-shadow:0 0 6px rgba(0,0,0,.25);
+}
 
 .ornament{
-
-font-size:24px;
-
-margin:20px 0;
-
+font-size:20px;
+margin:14px 0;
+letter-spacing:6px;
 color:#d8c9a8;
+}
 
-letter-spacing:8px;
+@keyframes fadeFrame{
+0%{
+opacity:0;
+transform:translateY(40px);
+}
 
+100%{
+opacity:1;
+transform:translateY(0);
+}
 }
   
 #musicBtn{
@@ -367,6 +375,19 @@ color:#f8ead2;
     font-size:42px;
   }
 
+  .frame-container{
+width:94%;
+max-width:420px;
+}
+
+.frame-text{
+width:58%;
+}
+
+.frame-text p{
+font-size:17px;
+line-height:1.7;
+}
   .date{
     font-size:18px;
   }
